@@ -117,7 +117,4 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="label1.Text" xml:space="preserve">
-    <value>Welcome to Network Clipboard! This tool allows you to share your system clipboard with any device you link it to. This software works in client / server mode. So that you need to make one device a server and all other devices can connect to it. It doesn't matter which device will be a server, but you will need to be able to connect to it from clients.</value>
-  </data>
 </root>
