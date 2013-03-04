@@ -25,9 +25,11 @@ namespace NCB
 {
     class Core
     {
+        public static System.Threading.Thread ServerThread = null;
+
         public static void WriteLog(string log)
         { 
-            Console.WriteLine(DateTime.Now.ToString() + " SYSLOG: " + log);
+            System.Console.WriteLine(DateTime.Now.ToString() + " SYSLOG: " + log);
             return;
         }
 
@@ -39,6 +41,22 @@ namespace NCB
         public static void LoadConf()
         { 
             
+        }
+
+        public static void CreateServer()
+        {
+            try
+            {
+                Server server = new Server();
+                while (server.Running)
+                {
+                    server.Wait();
+                    System.Threading.Thread.Sleep(100);
+                }
+            } catch (Exception fail)
+            {
+                Core.handleException(fail);
+            }
         }
 
         public static bool Load()

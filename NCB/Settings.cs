@@ -21,6 +21,8 @@ namespace NCB
             groupBox2.Visible = false;
             groupBox3.Top = groupBox2.Top;
             groupBox3.Height = groupBox2.Height;
+            comboBox2.Text = Configuration.ServerPort.ToString();
+            comboBox3.Text = Configuration.ServerPort.ToString();
             this.Height = 280;
         }
 
@@ -49,6 +51,33 @@ namespace NCB
             if (radioButton2.Checked)
             {
                 Select(false);
+            }
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                Hide();
+                Core.ServerThread = new System.Threading.Thread(Core.CreateServer);
+                Core.ServerThread.Start();
+            }
+            catch (Exception fail)
+            {
+                Core.handleException(fail);
+            }
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                Hide();
+
+            }
+            catch (Exception fail)
+            {
+                Core.handleException(fail);
             }
         }
     }

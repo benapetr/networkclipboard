@@ -24,6 +24,18 @@ namespace NCB
 {
     class Server
     {
+        public int Port = 0;
+        public List<Client> Clients = new List<Client>();
+        public bool Running = true;
 
+        public Server()
+        {
+            Port = Configuration.ServerPort;
+        }
+
+        public void Wait()
+        { 
+            
+        }
     }
 }
